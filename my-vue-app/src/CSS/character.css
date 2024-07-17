@@ -1,0 +1,30 @@
+.card-item {
+  flex: 1 1 calc(20% - 16px); /* Adjusted to five cards per row with spacing */
+  max-width: calc(20% - 16px); /* Adjusted to five cards per row with spacing */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  margin-bottom: 0px; /* Decreased margin at the bottom of each card */
+  padding: 16px; /* Padding inside each card */
+  border-radius: 8px; /* Rounded corners for each card */
+  text-align: center; /* Center text inside each card */
+  transition: transform 0.3s ease; /* Added transition for transform effects */
+  margin-right: 16px; /* Added right margin for spacing between cards */
+  
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 16px; /* Decreased gap between cards horizontally (24px) and vertically (16px) */
+  padding: 16px; /* Padding around the container */
+  justify-content: center;
+  max-width: 1700px; /* Limit width of cards container */
+  width: 100%; /* Ensure full width responsiveness */
+  margin: auto; /* Center container horizontally */
+  margin-top: 200px;
+
+}
+
+.card-item:hover {
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle box-shadow on hover */
+}

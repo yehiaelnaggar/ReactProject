@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100px; */
+  margin-bottom: 100px;
+  background-color: white;
+}
+
+.logo {
+  margin-bottom: 5px;
+  margin-left: 5px;
+  justify-content: center;
+}
+
+.logo img {
+  max-width: 600px;
+  height: auto;
+}
+
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 800px;
+  justify-content: center;
+}
+
+.button-container {
+  display: flex;
+  width: 100%;
+  max-width: 250px;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.paragraph-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; /* Center text within the container */
+  color: #868686;
+  width: 1000px;
+  /* height: 100vh;
+    padding: 20px; */
+  box-sizing: border-box; /* Ensure padding is included in width/height calculations */
+}
