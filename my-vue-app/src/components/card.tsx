@@ -44,28 +44,28 @@ const MediaCard: React.FC<Props> = ({ id, title, description, image }) => {
   return (
     <Card
       className="MuiCard-root"
-      sx={{ backgroundColor: "var(--light-gray)" }}
+      sx={{ backgroundColor: '#272727' }}
     >
-      <CardMedia sx={{ height: 180 }} image={image} title={title} />
+      <CardMedia sx={{ height: 220 }} image={image} title={title} />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h5" component="div" sx={{color: "#f5f5f5"}}>
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" sx={{color: "#f5f5f5", fontSize:20}}>
           {description}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{ display: 'flex', justifyContent: 'center' }}>
         <Button
           size="small"
-          sx={{ backgroundColor: "#b2df28", color: "white" }}
+          sx={{ backgroundColor: "#00b5cc", color: "white" }}
           onClick={() => handleFavorite({ id, title, description,image })}
         >
           Add to Favorites
         </Button>
         <Button
           size="small"
-          sx={{ backgroundColor: "#b2df28", color: "white" }}
+          sx={{ backgroundColor: "#00b5cc", color: "white" }}
           onClick={handleClick}
         >
           Learn More

@@ -10,19 +10,19 @@ function App() {
   const navigate = useNavigate();
   return (
     <>
-      <AppBar position="fixed" color="warning" sx={{backgroundColor:'#00b5cc'}}>
+      <AppBar position="fixed" color="warning" sx={{backgroundColor:'#272727'}}>
         <Toolbar>
           <Typography variant="h6" component="div">
             Main
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
-          <Button variant="contained" color="info" sx={{ marginRight: 2, backgroundColor:'#b2df28' }}   onClick={() => navigate("/")}>
+          <Button variant="contained" color="info" sx={{ marginRight: 2, backgroundColor:'#00b5cc' }}   onClick={() => navigate("/")}>
             Home
           </Button>
           <Button
             variant="contained"
             color="info"
-            sx={{  marginRight: 2,backgroundColor:'#b2df28' }}
+            sx={{  marginRight: 2,backgroundColor:'#00b5cc' }}
             onClick={() => navigate("/characters")}
           >
             characters
@@ -30,7 +30,7 @@ function App() {
           <Button
             variant="contained"
             color="info"
-            sx={{ backgroundColor:'#b2df28' }}
+            sx={{ backgroundColor:'#00b5cc' }}
             onClick={() => navigate("/favourites")}
           >
             Favourits

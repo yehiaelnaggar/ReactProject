@@ -1,3 +1,20 @@
+.app-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 16px; /* Decreased gap between cards horizontally (24px) and vertically (16px) */
+  /* padding: 16px; */
+  justify-content: center;
+  width: 100%; /* Set width to 100% of its container */
+  max-width: 100%; /* Ensure it doesn't exceed 100% of its container */
+  /* margin: auto; */
+  position: relative; /* Positioning context for absolute positioning */
+  background-image: url('../assets/wallpaper3.png'); /* Replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
 .card-item {
   flex: 1 1 calc(20% - 16px); /* Adjusted to five cards per row with spacing */
   max-width: calc(20% - 16px); /* Adjusted to five cards per row with spacing */
@@ -8,21 +25,24 @@
   text-align: center; /* Center text inside each card */
   transition: transform 0.3s ease; /* Added transition for transform effects */
   margin-right: 16px; /* Added right margin for spacing between cards */
+  background-color: #272727;
 }
-
 .cards-container {
   display: flex;
   flex-wrap: wrap;
   gap: 24px 16px; /* Decreased gap between cards horizontally (24px) and vertically (16px) */
   padding: 16px; /* Padding around the container */
   justify-content: center;
-  max-width: 1700px; /* Limit width of cards container */
-  width: 100%; /* Ensure full width responsiveness */
+  width: 100vw; /* Set width to 100% of viewport width */
+  max-width: 100%; /* Ensure it doesn't exceed 100% of viewport width */
   margin: auto; /* Center container horizontally */
-  margin-top: 200px;
+  margin-top: 70px;
+  /* background-color: #161616; */
+  
 }
+
 
 .card-item:hover {
   transform: translateY(-5px); /* Lift card slightly on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle box-shadow on hover */
+  box-shadow: 0 4px 8px #b2df28; /* Add subtle box-shadow on hover */
 }

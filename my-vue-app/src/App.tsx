@@ -7,7 +7,6 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 
-
 import axios from "axios";
 import Navbar from "./components/Navbar";
 import MediaCard from "./components/card";
@@ -15,10 +14,6 @@ import CharacterDetail from "./components/character";
 import SearchAndLogo from "./components/searchAndLogo"; // Importing the SearchAndLogo component
 import "./CSS/characters.css";
 import FavoritePage from "./components/Favourite";
-
-
-
-
 
 interface Character {
   id: number;
@@ -44,14 +39,14 @@ const App = () => {
   return (
     <div className="app-container">
       <BrowserRouter>
-        <Navbar />
-
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<SearchAndLogo />} />
           <Route
             path="/characters"
             element={
               <div className="cards-container">
+                <Navbar />
                 {characters.map((character) => (
                   <div key={character.id} className="card-item">
                     <MediaCard
@@ -66,7 +61,7 @@ const App = () => {
             }
           />
           <Route path="/character/:id" element={<CharacterDetail />} />
-          <Route path="/favourites" element={<FavoritePage />} />
+          <Route path="/favourites" element={<><Navbar /><FavoritePage /></>} />
           
         </Routes>
       </BrowserRouter>

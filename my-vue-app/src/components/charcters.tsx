@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MediaCard from "../components/card";
 import "./characters.css";
+import Navbar from "./Navbar";
 
 interface Character {
   id: number;
@@ -27,6 +28,7 @@ export const Characters = () => {
 
   return (
     <div className="app-container">
+      <Navbar />
       <div className="cards-container">
         {characters.map((character) => (
           <div key={character.id} className="card-item">

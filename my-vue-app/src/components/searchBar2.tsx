@@ -64,7 +64,7 @@ export const SearchBar2 = () => {
             />
           ))
         ) : (
-          <p>No results found</p>
+          <p></p>
         )}
       </div>
     </div>

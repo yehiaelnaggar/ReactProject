@@ -17,7 +17,7 @@
   gap: 24px 16px; /* Decreased gap between cards horizontally (24px) and vertically (16px) */
   padding: 16px; /* Padding around the container */
   justify-content: center;
-  max-width: 1700px; /* Limit width of cards container */
+  max-width: 80%; /* Limit width of cards container */
   width: 100%; /* Ensure full width responsiveness */
   margin: auto; /* Center container horizontally */
   margin-top: 200px;

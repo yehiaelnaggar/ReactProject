@@ -1,33 +1,81 @@
-/* src/CSS/favorites.css */
 .favorites-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .favorites-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 16px; /* Decreased gap between cards horizontally (24px) and vertically (16px) */
+  /* padding: 16px; */
+  justify-content: center;
+  width: 100%; /* Set width to 100% of its container */
+  max-width: 100%; /* Ensure it doesn't exceed 100% of its container */
+  /* margin: auto; */
+  position: relative; /* Positioning context for absolute positioning */
+  background-image: url('../assets/wallpaper3.png'); /* Replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.favorites-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 16px; /* Decreased gap between cards horizontally (24px) and vertically (16px) */
+  padding: 16px; /* Padding around the container */
+  justify-content: center;
+  width: 100vw; /* Set width to 100% of viewport width */
+  max-width: 100%; /* Ensure it doesn't exceed 100% of viewport width */
+  margin: auto; /* Center container horizontally */
+}
+
+.favorite-item {
+  /* flex: 0 0 calc(25% - 24px); 
+  max-width: calc(25% - 24px); */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  padding: 16px; /* Padding inside each card */
+  border-radius: 8px; /* Rounded corners for each card */
+  text-align: center; /* Center text inside each card */
+  transition: transform 0.3s ease; /* Added transition for transform effects */
+  background-color: #272727; /* Set background color */
+}
+
+.favorite-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px; /* Ensure images within cards also have rounded corners */
+}
+
+.favorite-item button {
+  margin-top: 10px;
+  padding: 8px 16px; /* Ensure consistent padding for buttons */
+  background-color: #00b5cc;
+  color: white;
+  border: none;
+  border-radius: 4px; /* Rounded corners for buttons */
+  cursor: pointer;
+}
+
+.favorite-item:hover {
+  transform: translateY(-5px); /* Lift card slightly on hover */
+  box-shadow: 0 4px 8px #b2df28; /* Add subtle box-shadow on hover */
+}
+
+@media (max-width: 1200px) {
   .favorite-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    background-color: #f9f9f9;
+    flex-basis: calc(25% 24px); /* Three items per row */
+    max-width: calc(25% - 24px);
+    min-width: calc(24% - 24px);
   }
-  
-  .favorite-item img {
+}
+
+@media (max-width: 900px) {
+  .favorite-item {
+    flex-basis: calc(50% - 24px); /* Two items per row */
+    max-width: calc(50% - 24px);
+  }
+}
+
+@media (max-width: 600px) {
+  .favorite-item {
+    flex-basis: 100%; /* One item per row */
     max-width: 100%;
-    height: auto;
   }
-  
-  .favorite-item button {
-    margin-top: 10px;
-    padding: 5px 10px;
-    background-color: #b2df28;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
+}

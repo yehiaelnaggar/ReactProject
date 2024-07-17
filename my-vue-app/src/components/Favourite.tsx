@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import MediaCard from '../components/card'; // Adjust path as necessary
 import '../CSS/Favourite.css';
+import Navbar from './Navbar';
 
 interface Character {
   id: number;
@@ -29,7 +30,8 @@ const FavoritePage = () => {
 
   return (
     <div className="favorites-container">
-      <h2>Favorite Characters</h2>
+      <Navbar />
+        {/* <h2 style={{ fontFamily: 'Roboto, sans-serif', color: 'white' }}>Favourite Characters</h2> */}
       <div className="favorites-list">
         {favoriteCharacters.length > 0 ? (
           favoriteCharacters.map((character) => (

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../CSS/character.css"; // Import CSS file
+import "../CSS/OneCharacter.css"; // Import CSS file
 
 interface Character {
   id: number;
