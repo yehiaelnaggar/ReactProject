@@ -1,0 +1,58 @@
+/* src/CSS/CharacterDetail.css */
+
+.character-detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  height: 1080px;
+  position: relative; /* Positioning context for absolute positioning */
+  background-image: url('../assets/wallpaper3.png'); /* Replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.character-image {
+  margin-right: 100px;
+  margin-top: 30%;
+  flex: 0 0 auto;
+  max-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.character-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.character-details {
+  margin-top: 30%;
+  flex: 1;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #272727;
+  border-radius: 8px;
+  filter: drop-shadow(0 4px 10px #b2df28);
+}
+
+.character-details h1 {
+  font-size: 2rem;
+  color: #e0ece0; /* Light gray text color */
+  margin-bottom: 10px;
+  font-family: 'Roboto', sans-serif; /* Roboto font */
+}
+
+.character-details p {
+  font-size: 1.2rem;
+  color: #e0ece0; /* Light gray text color */
+  margin-bottom: 8px;
+  font-family: 'Roboto', sans-serif; /* Roboto font */
+}
+
+.character-details strong {
+  font-weight: bold;
+}
