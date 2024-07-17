@@ -1,8 +1,9 @@
 // src/pages/FavoritePage.tsx
+
 import React, { useEffect, useState } from 'react';
 import MediaCard from '../components/card'; // Adjust path as necessary
-import '../CSS/Favourite.css';
 import Navbar from './Navbar';
+import '../CSS/Favourite.css'; // Adjust path as necessary
 
 interface Character {
   id: number;
@@ -31,7 +32,9 @@ const FavoritePage = () => {
   return (
     <div className="favorites-container">
       <Navbar />
-        {/* <h2 style={{ fontFamily: 'Roboto, sans-serif', color: 'white' }}>Favourite Characters</h2> */}
+      <div className="favorites-header">
+        <h2 className="favorites-title">Favorite Characters</h2>
+      </div>
       <div className="favorites-list">
         {favoriteCharacters.length > 0 ? (
           favoriteCharacters.map((character) => (
@@ -42,11 +45,15 @@ const FavoritePage = () => {
                 description={character.species}
                 image={character.image}
               />
-              <button onClick={() => removeFromFavorites(character.id)}>Remove from Favorites</button>
+              <button className="remove-button" onClick={() => removeFromFavorites(character.id)}>
+                Remove from Favorites
+              </button>
             </div>
           ))
         ) : (
-          <p>No favorite characters yet</p>
+          <p style={{ fontFamily: 'Roboto, sans-serif', color: '#ffffff', fontSize: '1.5rem' }}>
+            No favorite characters yet
+          </p>
         )}
       </div>
     </div>

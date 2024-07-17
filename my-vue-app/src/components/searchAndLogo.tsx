@@ -29,7 +29,7 @@ const SearchAndLogo = () => {
         <Link to="/episodes">
           <Button text="Episodes" />
         </Link>
-        <Link to="/Favourite"> {}
+        <Link to="/favourites"> {}
           <Button text="Favorites" />
         </Link>
       </div>
