@@ -1,48 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); /* Import Roboto font */
+
+body {
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
 .app-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 24px 16px; /* Decreased gap between cards horizontally (24px) and vertically (16px) */
-  /* padding: 16px; */
-  justify-content: center;
-  width: 100%; /* Set width to 100% of its container */
-  max-width: 100%; /* Ensure it doesn't exceed 100% of its container */
-  /* margin: auto; */
-  position: relative; /* Positioning context for absolute positioning */
-  background-image: url('../assets/wallpaper3.png'); /* Replace with your image path */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center align items */
+  justify-content: center; /* Center items vertically */
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  background-image: url('../assets/wallpaper3.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
 }
 
-.card-item {
-  flex: 1 1 calc(20% - 16px); /* Adjusted to five cards per row with spacing */
-  max-width: calc(20% - 16px); /* Adjusted to five cards per row with spacing */
-  box-sizing: border-box; /* Include padding and border in element's total width and height */
-  margin-bottom: 0px; /* Decreased margin at the bottom of each card */
-  padding: 16px; /* Padding inside each card */
-  border-radius: 8px; /* Rounded corners for each card */
-  text-align: center; /* Center text inside each card */
-  transition: transform 0.3s ease; /* Added transition for transform effects */
-  margin-right: 16px; /* Added right margin for spacing between cards */
-  background-color: #272727;
-}
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px 16px; /* Decreased gap between cards horizontally (24px) and vertically (16px) */
-  padding: 16px; /* Padding around the container */
+  gap: 24px 16px;
+  padding: 16px;
   justify-content: center;
-  width: 100vw; /* Set width to 100% of viewport width */
-  max-width: 100%; /* Ensure it doesn't exceed 100% of viewport width */
-  margin: auto; /* Center container horizontally */
+  width: 100%; /* Use 100% instead of 100vw */
+  max-width: 100%;
+  margin: auto;
   margin-top: 70px;
-  /* background-color: #161616; */
-  
 }
 
+.card-item {
+  flex: 1 1 calc(20% - 16px);
+  max-width: calc(20% - 16px);
+  box-sizing: border-box;
+  margin-bottom: 0px;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  margin-right: 16px;
+  background-color: #272727;
+}
 
 .card-item:hover {
-  transform: translateY(-5px); /* Lift card slightly on hover */
-  box-shadow: 0 4px 8px #b2df28; /* Add subtle box-shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px #b2df28;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.pagination-container button {
+  background-color: #42b4ca;
+  color: #fff; /* Set font color to white */
+  font-family: 'Roboto', sans-serif; /* Use Roboto font */
+  border: none;
+  padding: 10px 20px;
+  margin: 0 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-container button:hover {
+  background-color: #42b4ca; /* Keep the same background color on hover */
 }
