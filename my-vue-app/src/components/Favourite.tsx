@@ -33,7 +33,7 @@ const FavoritePage = () => {
     <div className="favorites-container">
       <Navbar />
       <div className="favorites-header">
-        <h2 className="favorites-title">Favorite Characters</h2>
+        {/* <h2 className="favorites-title">Favorite Characters</h2> */}
       </div>
       <div className="favorites-list">
         {favoriteCharacters.length > 0 ? (

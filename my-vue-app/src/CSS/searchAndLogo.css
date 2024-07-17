@@ -1,78 +1,69 @@
 body {
-  margin: 0; /* Reset browser default margins */
-  /* overflow-y: hidden; */
+  margin: 0;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Align content to the top */
-  height: 100vh;
+  justify-content: flex-start;
+  min-height: 100vh;
   width: 100%;
-  max-width: 1920px;
-  max-height: 1080px;
+  max-width: 100%;
   background-color: #161616;
-  overflow-y: auto; /* Enable vertical scrolling within container */
-  position: relative; /* Positioning context for absolute positioning */
-  background-image: url('../assets/wallpaper3.png'); /* Replace with your image path */
+  background-image: url('../assets/wallpaper3.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  overflow-y: auto;
+  position: relative;
 }
 
 .logo {
-  margin-top: 100px;
+  margin-top: 50px; /* Reduced margin for smaller screens */
   margin-bottom: 5px;
   margin-left: 5px;
   justify-content: center;
-  animation: glow 3s infinite ease-in-out
-  
+  animation: glow 3s infinite ease-in-out;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 1em #646cffaa); /* Simplified drop-shadow effect */
 }
 
 @keyframes glow {
   0% {
-    filter: drop-shadow(0 0 0.5px #b2df28) drop-shadow(0 0 1px #b2df28) drop-shadow(0 0 2px #b2df28) drop-shadow(0 0 3px #b2df28) drop-shadow(0 0 10px #b2df28) drop-shadow(0 0 12px #b2df28) drop-shadow(0 0 14px #b2df28);
+    filter: drop-shadow(0 0 0.5px #b2df28) drop-shadow(0 0 2px #b2df28) drop-shadow(0 0 10px #b2df28);
   }
   50% {
-    filter: drop-shadow(0 0 0.7px #b2df28) drop-shadow(0 0 1px #b2df28) drop-shadow(0 0 2px #b2df28) drop-shadow(0 0 3px #b2df28) drop-shadow(0 0 15px #b2df28) drop-shadow(0 0 16px #b2df28) drop-shadow(0 0 18px #b2df28);
+    filter: drop-shadow(0 0 0.7px #b2df28) drop-shadow(0 0 2px #b2df28) drop-shadow(0 0 15px #b2df28);
   }
   100% {
-    filter: drop-shadow(0 0 0.5px #b2df28) drop-shadow(0 0 1px #b2df28) drop-shadow(0 0 2px #b2df28) drop-shadow(0 0 3px #b2df28) drop-shadow(0 0 10px #b2df28) drop-shadow(0 0 12px #b2df28) drop-shadow(0 0 14px #b2df28);
+    filter: drop-shadow(0 0 0.5px #b2df28) drop-shadow(0 0 2px #b2df28) drop-shadow(0 0 10px #b2df28);
   }
 }
-
-
-
-/* .logo img {
-  max-width: 700px;
-  height: auto;
-  animation: glow 2s infinite ease-in-out;
-} */
 
 .search-bar {
   display: flex;
   width: 100%;
   max-width: 800px;
   justify-content: center;
+  margin-top: 20px; /* Reduced margin for better spacing */
 }
 
 .button-container {
   display: flex;
   width: 100%;
-  max-width: 250px;
+  max-width: 200px; /* Reduced max-width for smaller screens */
   justify-content: center;
-  margin-top: 30px;
-  margin-left: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px; /* Reduced margin for better spacing */
 }
+
 .button-container button {
-  margin-right: 10px; /* Adjust margin-right for spacing between buttons */
+  margin-right: 8px; /* Reduced margin for better spacing */
 }
+
 .paragraph-container {
   display: flex;
   justify-content: center;
@@ -83,4 +74,19 @@ body {
   width: 1000px;
   /* height: 100vh;
     padding: 20px; */
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    margin-top: 30px; /* Further reduced margin for smaller screens */
+  }
+  
+  .button-container {
+    max-width: 180px; /* Further reduced max-width for smaller screens */
+  }
 }
