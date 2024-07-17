@@ -21,9 +21,9 @@ body {
 }
 
 .logo {
-  margin-top: 50px; /* Reduced margin for smaller screens */
-  margin-bottom: 5px;
-  margin-left: 5px;
+  margin-top: 3rem; /* Adjusted margin using rem units */
+  margin-bottom: 0.3rem; /* Adjusted margin using rem units */
+  margin-left: 0.3rem; /* Adjusted margin using rem units */
   justify-content: center;
   animation: glow 3s infinite ease-in-out;
 }
@@ -47,21 +47,21 @@ body {
 .search-bar {
   display: flex;
   width: 100%;
-  max-width: 800px;
+  max-width: 50rem; /* Adjusted max-width using rem units */
   justify-content: center;
-  margin-top: 20px; /* Reduced margin for better spacing */
+  margin-top: 2rem; /* Adjusted margin using rem units */
 }
 
 .button-container {
   display: flex;
   width: 100%;
-  max-width: 200px; /* Reduced max-width for smaller screens */
+  max-width: 20rem; /* Adjusted max-width using rem units */
   justify-content: center;
-  margin-top: 10px; /* Reduced margin for better spacing */
+  margin-top: 1rem; /* Adjusted margin using rem units */
 }
 
 .button-container button {
-  margin-right: 8px; /* Reduced margin for better spacing */
+  margin-right: 0.8rem; /* Adjusted margin using rem units */
 }
 
 .paragraph-container {
@@ -83,10 +83,10 @@ body {
 
 @media (max-width: 768px) {
   .logo {
-    margin-top: 30px; /* Further reduced margin for smaller screens */
+    margin-top: 1.5rem; /* Further adjusted margin using rem units */
   }
   
   .button-container {
-    max-width: 180px; /* Further reduced max-width for smaller screens */
+    max-width: 15rem; /* Further adjusted max-width using rem units */
   }
 }
