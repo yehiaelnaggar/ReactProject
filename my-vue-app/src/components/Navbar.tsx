@@ -61,7 +61,7 @@ function App() {
             <Button
               variant="contained"
               color="info"
-              sx={{ backgroundColor: "#00b5cc" }}
+              sx={{ marginRight: 2, backgroundColor: "#00b5cc" }}
               onClick={() => navigate("/favourites")}
             >
               Favorites

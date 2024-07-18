@@ -7,6 +7,7 @@ import SignUp from "./auth/SignUp";
 import FavoritePage from "./components/Favourite";
 import { AuthProvider } from "./contexts/AuthContext"; // Adjust path as necessary
 import Home from "./components/searchAndLogo";
+import Character from "./components/character";
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/characters" element={<Characters />} />
+            <Route path="/character/:id" element={<Character />} />
             <Route path="/favourites" element={<FavoritePage />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
