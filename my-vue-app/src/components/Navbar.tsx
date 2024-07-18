@@ -10,7 +10,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const getTitle = (path) => {
+  const getTitle = (path: string) => {
     switch (true) {
       case path === "/characters":
         return "Characters";
