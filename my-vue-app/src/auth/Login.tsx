@@ -71,7 +71,7 @@ export default function Login() {
             overflow: "auto",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Avatar sx={{ m: 1, bgcolor: "#1565c0" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography
