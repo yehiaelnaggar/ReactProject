@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+// src/components/Characters.tsx
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import MediaCard from "../components/card";
@@ -6,7 +8,7 @@ import Navbar from "./Navbar";
 import CharacterDetail from "../components/character";
 import SearchAndLogo from "../components/searchAndLogo";
 import FavoritePage from "../components/Favourite";
-import '../CSS/characters.css';
+import "../CSS/characters.css";
 
 interface Character {
   id: number;
@@ -15,23 +17,34 @@ interface Character {
   species: string;
 }
 
-export const Characters = () => {
-  const [characters, setCharacters] = useState<Character[]>([]);
-  const [page, setPage] = useState<number>(1);
-  const pageSize = 20; // Number of characters per page
+const fetchCharacters = async (page: number) => {
+  const response = await axios.get(
+    `https://rickandmortyapi.com/api/character?page=${page}`
+  );
+  return response.data.results;
+};
 
-  useEffect(() => {
-    axios
-      .get(`https://rickandmortyapi.com/api/character?page=${page}`)
-      .then((response) => {
-        setCharacters(response.data.results);
-        // Scroll to the top of the page when data updates
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-      });
-  }, [page]);
+const Characters = () => {
+  const [page, setPage] = React.useState<number>(1);
+
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["characters", page],
+    queryFn: () => fetchCharacters(page),
+    staleTime: 5 * 1000,
+  });
+
+  const handlePrevPage = () => {
+    if (page > 1) {
+      setPage((prevPage) => prevPage - 1);
+    }
+  };
+
+  const handleNextPage = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error: {(error as Error).message}</div>;
 
   return (
     <BrowserRouter>
@@ -42,7 +55,7 @@ export const Characters = () => {
           element={
             <div className="cards-container">
               <Navbar />
-              {characters.map((character) => (
+              {data?.map((character: Character) => (
                 <div key={character.id} className="card-item">
                   <MediaCard
                     id={character.id}
@@ -53,18 +66,24 @@ export const Characters = () => {
                 </div>
               ))}
               <div className="pagination-container">
-                {page > 1 && ( // Render button only if page is greater than 1
-                  <button onClick={() => setPage((prev) => prev - 1)}>
-                    Prev Page
-                  </button>
+                {page > 1 && (
+                  <button onClick={handlePrevPage}>Prev Page</button>
                 )}
-                <button onClick={() => setPage((prev) => prev + 1)}>Next Page</button>
+                <button onClick={handleNextPage}>Next Page</button>
               </div>
             </div>
           }
         />
         <Route path="/character/:id" element={<CharacterDetail />} />
-        <Route path="/favourites" element={<><Navbar /><FavoritePage /></>} />
+        <Route
+          path="/favourites"
+          element={
+            <>
+              <Navbar />
+              <FavoritePage />
+            </>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

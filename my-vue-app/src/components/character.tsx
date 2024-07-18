@@ -1,5 +1,6 @@
 // src/components/CharacterDetail.tsx
-import { useEffect, useState } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import "../CSS/CharacterDetail.css"; // Import CSS file
@@ -15,44 +16,55 @@ interface Character {
   origin: { name: string };
 }
 
+const fetchCharacter = async (id: string) => {
+  const response = await axios.get(
+    `https://rickandmortyapi.com/api/character/${id}`
+  );
+  return response.data;
+};
+
 const CharacterDetail = () => {
   const { id } = useParams<{ id: string }>();
-  const [character, setCharacter] = useState<Character | null>(null);
 
-  useEffect(() => {
-    axios
-      .get(`https://rickandmortyapi.com/api/character/${id}`)
-      .then((response) => {
-        setCharacter(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching character data:", error);
-      });
-  }, [id]);
+  const {
+    data: character,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: ["character", id],
+    queryFn: () => fetchCharacter(id!),
+    staleTime: 5 * 1000,
+  });
 
-  if (!character) return <div>Loading...</div>;
+  if (isLoading) return <div>Loading...</div>;
+  if (isError) return <div>Error: {(error as Error).message}</div>;
 
   return (
     <div className="character-detail-container">
       <Navbar />
-      <div className="character-image">
-        <img src={character.image} alt={character.name} />
-      </div>
-      <div className="character-details">
-        <h1>{character.name}</h1>
-        <p>
-          <strong>Species:</strong> {character.species}
-        </p>
-        <p>
-          <strong>Status:</strong> {character.status}
-        </p>
-        <p>
-          <strong>Gender:</strong> {character.gender}
-        </p>
-        <p>
-          <strong>Origin:</strong> {character.origin.name}
-        </p>
-      </div>
+      {character && (
+        <>
+          <div className="character-image">
+            <img src={character.image} alt={character.name} />
+          </div>
+          <div className="character-details">
+            <h1>{character.name}</h1>
+            <p>
+              <strong>Species:</strong> {character.species}
+            </p>
+            <p>
+              <strong>Status:</strong> {character.status}
+            </p>
+            <p>
+              <strong>Gender:</strong> {character.gender}
+            </p>
+            <p>
+              <strong>Origin:</strong> {character.origin.name}
+            </p>
+          </div>
+        </>
+      )}
     </div>
   );
 };
