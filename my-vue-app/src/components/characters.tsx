@@ -1,4 +1,3 @@
-// src/components/Characters.tsx
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -36,11 +35,19 @@ const Characters = () => {
   const handlePrevPage = () => {
     if (page > 1) {
       setPage((prevPage) => prevPage - 1);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   };
 
   const handleNextPage = () => {
     setPage((prevPage) => prevPage + 1);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   if (isLoading) return <div>Loading...</div>;
