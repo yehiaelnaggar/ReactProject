@@ -11,7 +11,7 @@ body {
   width: 100%;
   max-width: 100%;
   background-color: #161616;
-  background-image: url('../assets/wallpaper3.png');
+  background-image: url("../assets/wallpaper3.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -34,13 +34,16 @@ body {
 
 @keyframes glow {
   0% {
-    filter: drop-shadow(0 0 0.5px #b2df28) drop-shadow(0 0 2px #b2df28) drop-shadow(0 0 10px #b2df28);
+    filter: drop-shadow(0 0 0.5px #b2df28) drop-shadow(0 0 2px #b2df28)
+      drop-shadow(0 0 10px #b2df28);
   }
   50% {
-    filter: drop-shadow(0 0 0.7px #b2df28) drop-shadow(0 0 2px #b2df28) drop-shadow(0 0 15px #b2df28);
+    filter: drop-shadow(0 0 1px #b2df28) drop-shadow(0 0 2px #b2df28)
+      drop-shadow(0 0 18px #b2df28);
   }
   100% {
-    filter: drop-shadow(0 0 0.5px #b2df28) drop-shadow(0 0 2px #b2df28) drop-shadow(0 0 10px #b2df28);
+    filter: drop-shadow(0 0 0.5px #b2df28) drop-shadow(0 0 2px #b2df28)
+      drop-shadow(0 0 10px #b2df28);
   }
 }
 
@@ -85,7 +88,7 @@ body {
   .logo {
     margin-top: 1.5rem; /* Further adjusted margin using rem units */
   }
-  
+
   .button-container {
     max-width: 15rem; /* Further adjusted max-width using rem units */
   }
