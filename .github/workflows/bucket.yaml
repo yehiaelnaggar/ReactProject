@@ -18,20 +18,22 @@ jobs:
           node-version: 16.x
 
       - name: Install Dependencies
+        working-directory: my-vue-app
         run: npm install
 
       - name: Build
-        run: npm run dev
+        working-directory: my-vue-app
+        run: npm run build
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
           aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+          aws-session-token: ${{secrets.AWS_SECRET_SESSION_TOKEN}}
           aws-region: eu-central-1
 
       - name: Upload to S3
-        run: aws s3 sync build s3://shikabala
+        run: aws s3 sync dist s3://shikabala
 
-      - name: Publish Message To SNS Subscribers
-        run: aws sns publish --topic-arn <your-sns-topic-arn> --message "New 
+      
