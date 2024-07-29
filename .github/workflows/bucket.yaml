@@ -9,6 +9,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Send initial slack message
+        uses: slackapi/slack-github-action@v1.26.0
+        continue-on-error: true
+        with:
+            # See also: https://api.slack.com/methods/chat.postMessage#channels
+            channel-id: general
+            payload: |
+              {
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": ":ghost: Detected a new change on *${{ github.event.repository.name }}* and *action: ${{ github.workflow }}* has triggered by :bowtie: *${{ github.actor }}* on branch *${{ github.ref }}*  .. \n*Links:* (<${{ github.event.pull_request.html_url || github.event.head_commit.url }}|diff>, <${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}|job logs>)"
+                    }
+                  }
+                ]
+              }
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
       - name: Checkout Repository
         uses: actions/checkout@v2
 
