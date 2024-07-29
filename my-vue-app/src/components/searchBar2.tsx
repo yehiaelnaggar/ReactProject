@@ -1,5 +1,5 @@
 // src/components/SearchBar2.tsx
-import React, { useState } from 'react';
+
 import axios from 'axios';
 import MediaCard from './card';
 import '../CSS/searchBar2.css';

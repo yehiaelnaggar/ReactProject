@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, useRoutes, Navigate } from "react-router-dom";
+
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import axios from "axios";
-import Navbar from "./components/Navbar";
+
 import MediaCard from "./components/card";
 import CharacterDetail from "./components/character";
 import SearchAndLogo from "./components/searchAndLogo";

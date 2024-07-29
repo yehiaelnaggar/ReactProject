@@ -1,12 +1,12 @@
 // src/containers/SearchAndLogo.tsx
 
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import SearchBar2 from './searchBar2'; // Adjust path as necessary
 import Button from './button'; // Adjust path as necessary
 import logo from '../assets/Rick-And-Morty-Logo.png';
 import '../CSS/searchAndLogo.css';
-import FavoritePage from './Favourite';
+
 
 const SearchAndLogo = () => {
   const handleFavorites = (character: any) => {

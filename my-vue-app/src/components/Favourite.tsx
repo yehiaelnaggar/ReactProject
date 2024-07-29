@@ -1,5 +1,5 @@
 // src/pages/FavoritePage.tsx
-import React, { useEffect, useState } from 'react';
+
 import MediaCard from '../components/card'; // Adjust path as necessary
 import '../CSS/Favourite.css';
 
