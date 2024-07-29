@@ -34,6 +34,6 @@ jobs:
           aws-region: eu-central-1
 
       - name: Upload to S3
-        run: aws s3 sync dist s3://shikabala
+        run: aws s3 sync build s3://shikabala
 
       
