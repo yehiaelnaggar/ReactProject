@@ -1,6 +1,6 @@
 // src/App.tsx
 
-import axios from "axios";
+/*import axios from "axios";
 import MediaCard from "../components/card";
 import "./characters.css";
 
@@ -44,3 +44,4 @@ export const Characters = () => {
 };
 
 export default Characters;
+*/

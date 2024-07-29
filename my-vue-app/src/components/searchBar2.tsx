@@ -1,4 +1,4 @@
-// src/components/SearchBar2.tsx
+/*// src/components/SearchBar2.tsx
 
 import axios from 'axios';
 import MediaCard from './card';
@@ -12,8 +12,8 @@ interface Character {
 }
 
 export const SearchBar2 = () => {
-  const [searchInput, setSearchInput] = useState('');
-  const [searchResults, setSearchResults] = useState<Character[]>([]);
+  const [searchInput, setSearchInput] = //useState('');
+  const [searchResults, setSearchResults] = //useState<Character[]>([]);
 
   const handleSearch = () => {
     if (searchInput.trim() === '') {
@@ -72,3 +72,4 @@ export const SearchBar2 = () => {
 };
 
 export default SearchBar2;
+*/

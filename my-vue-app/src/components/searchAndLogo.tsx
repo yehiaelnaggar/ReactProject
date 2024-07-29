@@ -1,6 +1,6 @@
 // src/containers/SearchAndLogo.tsx
 
-
+/*
 import { Link } from 'react-router-dom';
 import SearchBar2 from './searchBar2'; // Adjust path as necessary
 import Button from './button'; // Adjust path as necessary
@@ -47,3 +47,4 @@ const SearchAndLogo = () => {
 };
 
 export default SearchAndLogo;
+*/
