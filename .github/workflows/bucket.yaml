@@ -19,11 +19,11 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: ReactProject # Update this line with the correct path
+        working-directory: ./ReactProject/ReactProject # Update this line with the correct path to your package.json
 
       - name: Build
         run: npm run build
-        working-directory: ReactProject # Update this line with the correct path
+        working-directory: ./ReactProject/my-vue-app # Update this line with the correct path to your package.json
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -33,8 +33,7 @@ jobs:
           aws-region: eu-central-1
 
       - name: Upload to S3
-        run: aws s3 sync ReactProject/build s3://shikabala # Ensure this path is correct
-        working-directory: yehiaelnaggar/ReactProject/.github/workflows/bucket.yaml # Update this line with the correct path
+        run: aws s3 sync ./ReactProject/.github/workflows/bucket.yaml s3://shikabala # Ensure this path is correct
 
       - name: Publish Message To SNS Subscribers
         run: aws sns publish --topic-arn <your-sns-topic-arn> --message "New Version Is Released"
