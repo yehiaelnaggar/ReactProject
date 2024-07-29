@@ -1,5 +1,5 @@
 
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+/*import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import axios from "axios";
 
 import MediaCard from "./components/card";
@@ -104,3 +104,4 @@ const App = () => {
 };
 
 export default App;
+*/

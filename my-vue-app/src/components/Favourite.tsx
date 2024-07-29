@@ -1,5 +1,5 @@
 // src/pages/FavoritePage.tsx
-
+/*
 import MediaCard from '../components/card'; // Adjust path as necessary
 import '../CSS/Favourite.css';
 
@@ -52,3 +52,4 @@ const FavoritePage = () => {
 };
 
 export default FavoritePage;
+*/
