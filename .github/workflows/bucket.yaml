@@ -10,31 +10,25 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3 # Updated to the latest version
+        uses: actions/checkout@v2
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3 # Updated to the latest version
+        uses: actions/setup-node@v2
         with: 
-          node-version: '16.x'
+          node-version: 18.18
 
       - name: Install Dependencies
-        run: npm install
-        working-directory: ./path/to/your/project # Add this line if your package.json is not in the root directory
+        run: npm install 
 
       - name: Build
-        run: npm run build
-        working-directory: ./path/to/your/project # Add this line if your package.json is not in the root directory
+        run: npm run dev
 
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2 # Updated to the latest version
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-access-key-id: ${{secrets.AWS_ACCESS_KEY_ID}}
+          aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           aws-region: eu-central-1
 
       - name: Upload to S3
         run: aws s3 sync build s3://shikabala
-        working-directory: ./path/to/your/project/build # Ensure this path is correct
-
-      - name: Publish Message To SNS Subscribers
-        run: aws sns publish --topic-arn <your-sns-topic-arn> --message "New Version Is Released"
